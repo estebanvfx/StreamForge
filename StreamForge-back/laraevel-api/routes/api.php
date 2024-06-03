@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\accountController;
 use App\Http\Controllers\Api\MusicUrlController;
 use App\Http\Controllers\Api\TempAccountController;
+use App\Http\Controllers\Api\ProxyManagementController;
 use App\Models\TempAccount;
 
 
@@ -48,3 +49,5 @@ Route::middleware('static_token_auth')->group(function() {
 
     Route::delete('account-bank/{id}', [accountController::class, 'destroy']);
 });
+
+Route::get('connectSsh', [ProxyManagementController::class, 'index']);
