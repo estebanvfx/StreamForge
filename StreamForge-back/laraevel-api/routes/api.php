@@ -50,4 +50,5 @@ Route::middleware('static_token_auth')->group(function() {
     Route::delete('account-bank/{id}', [accountController::class, 'destroy']);
 });
 
-Route::get('connectSsh', [ProxyManagementController::class, 'index']);
+Route::get('connectssh', [ProxyManagementController::class, 'createProxy']);
+Route::get('create-vps', [ProxyManagementController::class, 'storeVps']);
